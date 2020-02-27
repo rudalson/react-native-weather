@@ -8,4 +8,9 @@
 expo init react-native-weather
 ```
 
+## expo
 
+### location 사용
+```shell script
+expo install expo-location
+```
