@@ -11,6 +11,7 @@ expo init react-native-weather
 ### Added packages
 ```shell script
 yarn add axios
+yarn add prop-types
 ```
 
 ## expo

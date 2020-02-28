@@ -1,6 +1,7 @@
 import React from 'react';
 import {Platform, Alert} from "react-native";
 import Loading from "./Loading";
+import Weather from "./Weather";
 import * as Location from 'expo-location';
 import axios from "axios";
 import config from "./api.config";
@@ -14,6 +15,7 @@ export default class App extends React.Component {
         const {data} = await axios.get(
             `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${config.apiKey}&units=metric`
         );
+        this.setState({isLoading:false, temp: data.main.temp});
         console.log(data);
     };
 
@@ -31,7 +33,6 @@ export default class App extends React.Component {
             } = await Location.getCurrentPositionAsync(options);
             console.log(latitude, longitude);
             this.getWeather(latitude, longitude);
-            this.setState({isLoading: false});
         } catch (error) {
             Alert.alert("Can't find you", "So sad");
             console.error(error);
@@ -43,9 +44,9 @@ export default class App extends React.Component {
     }
 
     render() {
-        const {isLoading} = this.state;
+        const {isLoading, temp} = this.state;
         return (
-            isLoading ? <Loading/> : null
+            isLoading ? <Loading/> : <Weather temp={Math.round(temp)}/>
         );
     }
 }
