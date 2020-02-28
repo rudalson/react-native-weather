@@ -8,9 +8,17 @@
 expo init react-native-weather
 ```
 
+### Added packages
+```shell script
+yarn add axios
+```
+
 ## expo
 
 ### location 사용
 ```shell script
 expo install expo-location
 ```
+
+## Weather API
+[openweathermap api](https://openweathermap.org/api)
