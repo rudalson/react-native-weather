@@ -19,6 +19,7 @@ yarn add prop-types
 ### location 사용
 ```shell script
 expo install expo-location
+expo install expo-linear-gradient
 ```
 
 ## Weather API
