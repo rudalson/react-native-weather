@@ -20,7 +20,7 @@ const weatherOptions = {
     Rain: {
         iconName: "weather-rainy",
         gradient: ["#00C6FB", "#005BEA"],
-        title: '안개',
+        title: '비',
         subtitle: '구름이 많고 날씨가 흐립니다',
     },
     Snow: {
